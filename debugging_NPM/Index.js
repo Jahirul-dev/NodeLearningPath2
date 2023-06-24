@@ -3,6 +3,7 @@ const http = require("http");
 const server = http.createServer((request, response) => {
   const url = request.url;
   response.setHeader("Content-Type", "text/html");
+  //usuql
 
   if (url === "/") {
     //console.log("data");
