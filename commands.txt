@@ -1,0 +1,9 @@
+Create package to run node js:
+
+npm init (then they will ask you some basic quistion)
+npm i nodemon
+To watch a single change npm start ---> (  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js") -- change to package.json
+To install express ---> npm install --save express
