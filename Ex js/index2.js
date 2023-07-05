@@ -1,10 +1,10 @@
 const express = require("express");
-
+const http = require("http");
 const app = express();
 
-app.use((res, req, next) => {
+app.use((req, res, next) => {
   console.log("in Middleware");
-  next();
+  res.send("<h1>datas</h1>");
 });
 
 app.use((req, res, next) => {

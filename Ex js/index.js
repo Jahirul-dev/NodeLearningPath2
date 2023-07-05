@@ -24,14 +24,13 @@ const http = require("http");
 const apps = express();
 apps.use("/about", (req, res, next) => {
   console.log("In other middleware");
-  res.send("<h2>TAke positions</h2>");
-  return res.end();
+  res.send("<h2>TAke positionsewe</h2>");
+  next();
 });
 
 apps.use("/", (req, res, next) => {
   console.log("In ");
   res.send("<h2>TAke positions</h2>");
-  res.end();
 });
 
 let server = http.createServer(apps);
