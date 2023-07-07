@@ -7,3 +7,4 @@ To watch a single change npm start ---> (  "scripts": {
     "start": "nodemon app.js",
     "start-server": "node app.js") -- change to package.json
 To install express ---> npm install --save express
+ npm install --save body-parser

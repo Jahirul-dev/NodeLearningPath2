@@ -21,15 +21,36 @@ const express = require("express");
 
 const http = require("http");
 
+const bodyParser = require("body-parser");
+
 const apps = express();
-apps.use("/about", (req, res, next) => {
-  console.log("In other middleware");
-  res.send("<h2>TAke positionsewe</h2>");
-  next();
+
+apps.use(bodyParser.urlencoded({ extended: false }));
+
+apps.use("/add-product", (req, res, next) => {
+  // console.log("In other middleware");
+  res.send(
+    '<form action="/product" method="post"><input type="text" name="title" /><button type="submit">Add product</button></form>'
+  );
 });
 
+apps.use("/product", (req, res, next) => {
+  console.log(req.body);
+  res.redirect("/");
+});
+
+// apps.get("/product", (req, res, next) => {
+//   console.log(req.body);
+//   res.redirect("/");
+// });
+
+// apps.post("/product", (req, res, next) => {
+//   console.log(req.body);
+//   res.redirect("/");
+// });
+
 apps.use("/", (req, res, next) => {
-  console.log("In ");
+  // console.log("In ");
   res.send("<h2>TAke positions</h2>");
 });
 
